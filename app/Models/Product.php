@@ -16,6 +16,12 @@ class Product extends Model
         'img',
         'company_id'
     ];
+    protected $hidden =
+    [
+        'created_at',
+        'updated_at'
+    ];
+
     public function company()
     {
         return $this->belongsTo(Company::class);
