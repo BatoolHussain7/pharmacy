@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
             $table->integer('total_price');
+            $table->unsignedBigInteger('admin_id');
+            $table->foreign('admin_id')
+                ->references('id')
+                ->on('admins')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

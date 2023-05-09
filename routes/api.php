@@ -31,9 +31,13 @@ Route::prefix('admin')->group(function () {
             ]);
         });
         Route::post('AddProduct', [\App\Http\Controllers\Auth\AdminController::class, 'AddProduct']);
+        //Route::get('logout', [\App\Http\Controllers\Auth\AdminController::class, 'logout']);
         Route::post('AddInfo/{product_id}', [\App\Http\Controllers\Auth\AdminController::class, 'AddInfo']);
         Route::get('totalAmount/{product_id}', [\App\Http\Controllers\Auth\AdminController::class, 'totalAmount']);
+        Route::post('getPrice', [\App\Http\Controllers\Auth\AdminController::class, 'getPrice']);
+        Route::post('createBill', [\App\Http\Controllers\Auth\AdminController::class, 'createBill']);
     });
+
 });
 
 

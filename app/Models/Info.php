@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Info extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'quantity'
+    ];
     public function pharmacyProduct()
     {
         return $this->belongsTo(PharmacyProduct::class);
